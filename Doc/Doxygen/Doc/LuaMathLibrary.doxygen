@@ -1,0 +1,232 @@
+/**
+@defgroup Lua
+
+@defgroup MathLibrary
+@ingroup Lua
+
+@page my_MathLibraryAbs abs
+@ingroup MathLibrary
+Returns the absolute value of x. 
+<br>[Lua API]<br>
+@code
+math.abs(x)
+@endcode
+
+@page my_MathLibraryAcos acos
+@ingroup MathLibrary
+Returns the arc cosine of x (in radians).
+<br>[Lua API]<br>
+@code
+math.acos(x)
+@endcode
+
+@page my_MathLibraryAsin asin
+@ingroup MathLibrary
+Returns the arc sine of x (in radians). 
+<br>[Lua API]<br>
+@code
+math.asin(x)
+@endcode
+
+@page my_MathLibraryAtan atan
+@ingroup MathLibrary
+Returns the arc tangent of x (in radians). 
+<br>[Lua API]<br>
+@code
+math.atan(x)
+@endcode
+
+@page my_MathLibraryAtan2 atan2
+@ingroup MathLibrary
+Returns the arc tangent of y/x (in radians), but uses the signs of both parameters to find the quadrant of the result. (It also handles correctly the case of x being zero.) 
+<br>[Lua API]<br>
+@code
+math.atan2(x, y)
+@endcode
+
+@page my_MathLibraryCeil ceil
+@ingroup MathLibrary
+Returns the smallest integer larger than or equal to x.
+<br>[Lua API]<br>
+@code
+math.ceil(x)
+@endcode
+
+@page my_MathLibraryCos cos
+@ingroup MathLibrary
+Returns the cosine of x (assumed to be in radians).
+<br>[Lua API]<br>
+@code
+math.cos(x)
+@endcode
+
+@page my_MathLibraryCosh cosh
+@ingroup MathLibrary
+Returns the hyperbolic cosine of x. 
+<br>[Lua API]<br>
+@code
+math.cosh(x)
+@endcode
+
+@page my_MathLibraryDeg deg
+@ingroup MathLibrary
+Returns the angle x (given in radians) in degrees.
+<br>[Lua API]<br>
+@code
+math.deg(x)
+@endcode
+
+@page my_MathLibraryExp exp
+@ingroup MathLibrary
+Returns the value e'x.
+<br>[Lua API]<br>
+@code
+math.exp(x)
+@endcode
+
+@page my_MathLibraryFloor floor
+@ingroup MathLibrary
+Returns the largest integer smaller than or equal to x.
+<br>[Lua API]<br>
+@code
+math.floor(x)
+@endcode
+
+@page my_MathLibraryFmod fmod
+@ingroup MathLibrary
+Returns the remainder of the division of x by y that rounds the quotient towards zero. 
+<br>[Lua API]<br>
+@code
+math.fmod(x, y)
+@endcode
+
+@page my_MathLibraryFrexp frexp
+@ingroup MathLibrary
+Returns m and e such that x = m2'e, e is an integer and the absolute value of m is in the range [0.5, 1) (or zero when x is zero).
+<br>[Lua API]<br>
+@code
+math.frexp(x)
+@endcode
+
+@page my_MathLibraryHuge huge
+@ingroup MathLibrary
+The value HUGE_VAL, a value larger than or equal to any other numerical value. 
+<br>[Lua API]<br>
+@code
+math.huge
+@endcode
+
+@page my_MathLibraryLdexp ldexp
+@ingroup MathLibrary
+Returns m2'e (e should be an integer). 
+<br>[Lua API]<br>
+@code
+math.ldexp(m, e)
+@endcode
+
+@page my_MathLibraryLog log
+@ingroup MathLibrary
+Returns the logarithm of x in the given base. The default for base is e (so that the function returns the natural logarithm of x). 
+<br>[Lua API]<br>
+@code
+math.log(x [, base])
+@endcode
+
+@page my_MathLibraryMax max
+@ingroup MathLibrary
+Returns the maximum value among its arguments.
+<br>[Lua API]<br>
+@code
+math.max(x, ...)
+@endcode
+
+@page my_MathLibraryMin min
+@ingroup MathLibrary
+Returns the minimum value among its arguments.
+<br>[Lua API]<br>
+@code
+math.min(x, ...)
+@endcode
+
+@page my_MathLibraryModf modf
+@ingroup MathLibrary
+Returns two numbers, the integral part of x and the fractional part of x.
+<br>[Lua API]<br>
+@code
+math.modf(x)
+@endcode
+
+@page my_MathLibraryPi pi
+@ingroup MathLibrary
+The value of π.
+<br>[Lua API]<br>
+@code
+math.pi
+@endcode
+
+@page my_MathLibraryPow pow
+@ingroup MathLibrary
+Returns xy. (You can also use the expression x^y to compute this value.)
+<br>[Lua API]<br>
+@code
+math.pow(x, y)
+@endcode
+
+@page my_MathLibraryRandom random
+@ingroup MathLibrary
+This function is an interface to the simple pseudo-random generator function rand provided by Standard C. (No guarantees can be given for its statistical properties.) <br>
+<br>
+When called without arguments, returns a uniform pseudo-random real number in the range [0,1). When called with an integer number m, math.random returns a uniform pseudo-random integer in the range [1, m]. When called with two integer numbers m and n, math.random returns a uniform pseudo-random integer in the range [m, n]. <br>
+<br>[Lua API]<br>
+@code
+math.random([m [,n]]))
+@endcode
+
+@page my_MathLibraryRandomseed randomseed
+@ingroup MathLibrary
+Sets x as the "seed" for the pseudo-random generator: equal seeds produce equal sequences of numbers.
+<br>[Lua API]<br>
+@code
+math.randomseed(x)
+@endcode
+
+@page my_MathLibrarySin sin
+@ingroup MathLibrary
+Returns the sine of x (assumed to be in radians).
+<br>[Lua API]<br>
+@code
+math.sin(x)
+@endcode
+
+@page my_MathLibrarySinh sinh
+@ingroup MathLibrary
+Returns the hyperbolic sine of x.
+<br>[Lua API]<br>
+@code
+math.sinh(x)
+@endcode
+
+@page my_MathLibrarySqrt sqrt
+@ingroup MathLibrary
+Returns the square root of x. (You can also use the expression x^0.5 to compute this value.)
+<br>[Lua API]<br>
+@code
+math.sqrt(x)
+@endcode
+
+@page my_MathLibraryTan tan
+@ingroup MathLibrary
+Returns the tangent of x (assumed to be in radians).
+<br>[Lua API]<br>
+@code
+math.tan(x)
+@endcode
+
+@page my_MathLibraryTanh tanh
+@ingroup MathLibrary
+Returns the hyperbolic tangent of x.
+<br>[Lua API]<br>
+@code
+math.tanh(x)
+@endcode
+*/

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OptionsView</class>
+ <widget class="QMainWindow" name="OptionsView">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>318</width>
+    <height>268</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>318</width>
+    <height>268</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>318</width>
+    <height>268</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Untitled</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>130</y>
+      <width>71</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../Resource/LFEditor.qrc">:/MainView/Options.png</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TitleLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>231</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Options</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="IsMusicOnCheck">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>10</y>
+      <width>70</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Music</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="IsSfxOnCheck">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>70</y>
+      <width>70</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sfx</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="MusicVolumeSlider">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>30</y>
+      <width>160</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SfxVolumeSlider">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>90</y>
+      <width>160</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="MusicVolumeSpin">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>30</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="SfxVolumeSpin">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>90</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>296</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="ActionNew"/>
+   <addaction name="ActionOpen"/>
+   <addaction name="ActionSave"/>
+  </widget>
+  <action name="ActionNew">
+   <property name="icon">
+    <iconset resource="../Resource/LFEditor.qrc">
+     <normaloff>:/MainView/new.png</normaloff>:/MainView/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="ActionOpen">
+   <property name="icon">
+    <iconset resource="../Resource/LFEditor.qrc">
+     <normaloff>:/MainView/open.png</normaloff>:/MainView/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="ActionSave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../Resource/LFEditor.qrc">
+     <normaloff>:/MainView/save.png</normaloff>:/MainView/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>IsMusicOnCheck</tabstop>
+  <tabstop>MusicVolumeSlider</tabstop>
+  <tabstop>MusicVolumeSpin</tabstop>
+  <tabstop>IsSfxOnCheck</tabstop>
+  <tabstop>SfxVolumeSlider</tabstop>
+  <tabstop>SfxVolumeSpin</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../Resource/LFEditor.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>toolBar</sender>
+   <signal>actionTriggered(QAction*)</signal>
+   <receiver>OptionsView</receiver>
+   <slot>ToolButtonClick(QAction*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MusicVolumeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MusicVolumeSpin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SfxVolumeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SfxVolumeSpin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>159</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MusicVolumeSpin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MusicVolumeSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>188</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SfxVolumeSpin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SfxVolumeSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>162</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>IsMusicOnCheck</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>OptionsView</receiver>
+   <slot>ControlStateChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>12</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>IsSfxOnCheck</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>OptionsView</receiver>
+   <slot>ControlStateChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>24</x>
+     <y>166</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MusicVolumeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>OptionsView</receiver>
+   <slot>ControlStateChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>10</x>
+     <y>132</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SfxVolumeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>OptionsView</receiver>
+   <slot>ControlStateChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>159</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>51</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>ToolButtonClick(QAction*)</slot>
+  <slot>ControlStateChanged()</slot>
+ </slots>
+</ui>

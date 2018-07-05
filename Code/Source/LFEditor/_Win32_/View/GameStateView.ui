@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameStateView</class>
+ <widget class="QMainWindow" name="GameStateView">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>318</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>318</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>318</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Untitled</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextUnderIcon</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>159</y>
+      <width>71</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../Resource/LFEditor.qrc">:/MainView/Game.png</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TitleLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>231</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Game State</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="LevelIndexSpin">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>10</y>
+      <width>41</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="keyboardTracking">
+     <bool>true</bool>
+    </property>
+    <property name="suffix">
+     <string/>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="SecondSpin">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>40</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>999</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>10</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Level index</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Second (LF) / Eggs (Snake)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>110</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Level matrix</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>100</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resource/LFEditor.qrc">
+      <normaloff>:/MainView/Level.png</normaloff>:/MainView/Level.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>296</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="LivesSpin">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>70</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>999</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>70</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Lives (Snake)</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="ActionNew"/>
+   <addaction name="ActionOpen"/>
+   <addaction name="ActionSave"/>
+  </widget>
+  <action name="ActionNew">
+   <property name="icon">
+    <iconset resource="../Resource/LFEditor.qrc">
+     <normaloff>:/MainView/new.png</normaloff>:/MainView/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="ActionOpen">
+   <property name="icon">
+    <iconset resource="../Resource/LFEditor.qrc">
+     <normaloff>:/MainView/open.png</normaloff>:/MainView/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="ActionSave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../Resource/LFEditor.qrc">
+     <normaloff>:/MainView/save.png</normaloff>:/MainView/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>LevelIndexSpin</tabstop>
+  <tabstop>SecondSpin</tabstop>
+  <tabstop>toolButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../Resource/LFEditor.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>toolBar</sender>
+   <signal>actionTriggered(QAction*)</signal>
+   <receiver>GameStateView</receiver>
+   <slot>ToolButtonClick(QAction*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>263</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>282</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GameStateView</receiver>
+   <slot>LevelButtonClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>197</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>183</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LevelIndexSpin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>GameStateView</receiver>
+   <slot>ControlStateChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SecondSpin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>GameStateView</receiver>
+   <slot>ControlStateChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GameStateView</receiver>
+   <slot>ControlStateChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LivesSpin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>GameStateView</receiver>
+   <slot>ControlStateChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>183</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>26</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>ToolButtonClick(QAction*)</slot>
+  <slot>LevelButtonClick()</slot>
+  <slot>ControlStateChanged()</slot>
+ </slots>
+</ui>

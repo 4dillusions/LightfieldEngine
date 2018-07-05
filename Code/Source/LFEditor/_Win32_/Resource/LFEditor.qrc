@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="MainView">
+    <file>new.png</file>
+    <file>open.png</file>
+    <file>save.png</file>
+    <file>LightfieldEditorLogo.jpg</file>
+    <file>Level.png</file>
+    <file>Game.png</file>
+    <file>Options.png</file>
+  </qresource>
+</RCC>
