@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\UnitTest\Core\CollectionsTest.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\UnitTest\Core\CommonTest.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\UnitTest\Core\IOTest.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\UnitTest\Core\MathTest.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\UnitTest\Script\ScriptTest.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\UnitTest\Main.h" />
+    <ClInclude Include="..\..\..\Source\UnitTest\Test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\UnitTest\_Win32_\Main.cpp">
+      <Filter>_Win32_</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\UnitTest\_Win32_\UnitTest.cpp">
+      <Filter>_Win32_</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\UnitTest\Core\CollectionsTest.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\UnitTest\Core\CommonTest.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\UnitTest\Core\IOTest.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\UnitTest\Core\MathTest.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\UnitTest\Script\ScriptTest.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\UnitTest\Test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="_Win32_">
+      <UniqueIdentifier>{e6e2eabb-e4aa-4b17-8f3a-68e8427cd3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{0b893de5-a4ba-41f0-b357-0b6590db243c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{288b3630-28f8-41bb-a890-843c977cfc9f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

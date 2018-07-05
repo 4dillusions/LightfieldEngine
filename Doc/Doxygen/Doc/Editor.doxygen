@@ -1,0 +1,53 @@
+/**
+@example 1_Introduction
+This editor enables create and modify the config, state and level data of game.<br>
+Run editor: Code\Solution\Win32\Release\LFEditor.exe
+*/
+
+/**
+@example 2_MainMenu
+After the run editor you see the menu: <br>
+<img src="../Res/EditorMenu.jpg" alt="editor menu"><br>
+
+There are three menu items:
+1. Options: Music/SFX settings
+2. Game State: saved state settings
+3. Level: levels settings
+*/
+
+/**
+@example 3_Options
+The options menu item enables Music and SFX audio players settings for the game.<br>
+Also you can create new options file (OptionsData.dat) for testing, but the game create one after settings.
+
+<img src="../Res/EditorMenuOptions.jpg" alt="editor menu: options"><br>
+*/
+
+/**
+@example 4_GameState
+The game state menu item enables check current state what saved the game.<br>
+Open the GameStateData.dat and see state on LevelMatrix.
+
+<img src="../Res/EditorMenuGameStateOpen.jpg" alt="editor menu: options"><br>
+<img src="../Res/EditorMenuGameStateMatrix.jpg" alt="editor menu: matrix"><br>
+*/
+
+/**
+@example 5_Level
+Level menu item enables create and edit levels. <br>
+1. Choose tileset what represent game type and texture tileset
+2. Set level matrix x and y size
+3. Set how many levels are there with LevelCount
+4. Close the window and you are ready to edit levels
+
+<img src="../Res/EditorLevelCreate.jpg" alt="editor menu: options">
+
+Edit levels<br>
+1. Set zoom for level view size in editor
+2. Choose a tile on left side
+3. Set level tile for enable tile
+4. Choose another level on LevelIndex if you finish current level
+5. Save changes
+
+<img src="../Res/EditorLevelEdit.jpg" alt="editor menu: options"><br>
+*/

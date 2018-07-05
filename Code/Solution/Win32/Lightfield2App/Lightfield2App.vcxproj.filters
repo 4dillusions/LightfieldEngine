@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_Win32_">
+      <UniqueIdentifier>{f063381e-d55b-46b5-9447-5485a8b4044f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\Lightfield2\_Win32_\Lightfield2.cpp">
+      <Filter>_Win32_</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Lightfield2\_Win32_\Main.cpp">
+      <Filter>_Win32_</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
