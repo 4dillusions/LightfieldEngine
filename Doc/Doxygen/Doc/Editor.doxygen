@@ -1,6 +1,6 @@
 /**
 @example 1_Introduction
-This editor enables create and modify the config, state and level data of game.<br>
+The LF3 engine uses LF2 engine editor. This editor enables create and modify the config, state and level data of game.<br>
 Run editor: Code\Solution\Win32\Release\LFEditor.exe
 */
 

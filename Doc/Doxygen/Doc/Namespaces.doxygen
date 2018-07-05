@@ -1,0 +1,223 @@
+/**
+	@brief
+	Lightfield3 2D game engine
+*/
+namespace LF3Engine 
+{ 
+	/**
+		@brief
+		Engine library
+	*/
+	namespace LFEngine
+	{ 
+		/**
+			@brief
+			2D Audio system for play music and SFX files
+		*/
+		namespace LFAudio
+		{ }
+		
+		/**
+			@brief
+			Core subsystem for Math, IO etc.
+		*/
+		namespace LFCore
+		{ 
+			/**
+			@brief
+			Collections subsystem for fast game data structures and iteration
+			*/
+			namespace LFCollections
+			{ }
+			
+			/**
+			@brief
+			Common subsystem for elementary classes, for example DateTime, String etc.
+			*/
+			namespace LFCommon
+			{ }
+			
+			/**
+			@brief
+			IO subsystem for read/write operations
+			*/
+			namespace LFIO
+			{ }
+			
+			/**
+			@brief
+			Math subsystem for Linear Algebra
+			*/
+			namespace LFMath
+			{ }
+			
+			/**
+			@brief
+			Patterns subsystem for design patterns
+			*/
+			namespace LFPatterns
+			{ }
+		}
+		
+		/**
+			@brief
+			Data subsystem for game level, options etc
+		*/
+		namespace LFData
+		{ }
+		
+		/**
+			@brief
+			GameEngine subsystem for common game acrhitecture
+		*/
+		namespace LFGameEngine
+		{ }
+		
+		/**
+			@brief
+			GUI subsystem for 2D User Interface controls
+		*/
+		namespace LFGUI
+		{ }
+		
+		/**
+			@brief
+			Input subsystem for touch screen, mouse, and keyboard
+		*/
+		namespace LFInput
+		{ }
+		
+		/**
+			@brief
+			Network subsystem for hiscore database
+		*/
+		namespace LFNetwork
+		{ }
+		
+		/**
+			@brief
+			Render subsystem for OpenGLES2 and Direct3D9
+		*/
+		namespace LFRender
+		{ 
+			/**
+			@brief
+			DirectX 9.C render system
+			*/
+			namespace LFD3D9
+			{ }
+			
+			/**
+			@brief
+			OpenGL ES 2.0 render system
+			*/
+			namespace LFGLES20
+			{ }
+		}
+		
+		/**
+			@brief
+			Scene subsystem for Scenegraph etc.
+		*/
+		namespace LFScene
+		{ }
+		
+		/**
+			@brief
+			Script subsystem for Lua script wrapper
+		*/
+		namespace LFScript
+		{ 
+			/**
+			@brief
+			Lua wrapper for LF3Engine::LFEngine::LFCore subsystems
+			*/
+			namespace LFCore
+			{ 
+				/**
+				@brief
+				Lua wrapper for LF3Engine::LFEngine::LFCore::LFCommon subsystem
+				*/
+				namespace LFCommon
+				{ }
+				
+				/**
+				@brief
+				Lua wrapper for LF3Engine::LFEngine::LFCore::LFIO subsystem
+				*/
+				namespace LFIO
+				{ }
+			}
+			
+			/**
+			@brief
+			Lua wrapper for LF3Engine::LFEngine subsystems
+			*/
+			namespace LFEngine
+			{ 
+				/**
+				@brief
+				Lua wrapper for LF3Engine::LFEngine::LFAudio subsystem
+				*/
+				namespace LFAudio
+				{ }
+				
+				/**
+				@brief
+				Lua wrapper for LF3Engine::LFEngine::LFGameEngine subsystem
+				*/
+				namespace LFGameEngine
+				{ }
+				
+				/**
+				@brief
+				Lua wrapper for LF3Engine::LFEngine::LFInput subsystem
+				*/
+				namespace LFInput
+				{ }
+			}
+		}
+	}
+	
+	/**
+		@brief
+		UnitTesting system for LF engine
+	*/
+	namespace LFUnitTest 
+	{ 
+		/**
+			@brief
+			UnitTest for LF engine library
+		*/
+		namespace LFEngine
+		{ 
+			/**
+				@brief
+				UnitTest for LFEngine::LFCore subsystem
+			*/
+			namespace LFCore
+			{ }
+			
+			/**
+				@brief
+				UnitTest for LFEngine::LFData subsystem
+			*/
+			namespace LFData
+			{ }
+			
+			/**
+				@brief
+				UnitTest for LFEngine::LFNetwork subsystem
+			*/
+			namespace LFNetwork
+			{ }
+			
+			/**
+				@brief
+				UnitTest for LFEngine::LFScript subsystem
+			*/
+			namespace LFScript
+			{ }
+		}
+	}
+}

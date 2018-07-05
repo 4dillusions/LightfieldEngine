@@ -1,414 +1,489 @@
 /**
-@defgroup Tutorials
-
-There are some tutorials start Lightfield2 game engine programming.
-*/
-
-
-/**
 @defgroup FirstStep
-@ingroup Tutorials
 
-Lua is the most popular and lightweight scripting system supported in Lightfield 2 game engine. Lua is productive and easy to learn language for game logic.<br>
-<br>
-<a target = "_blank" href="http://www.lua.org/manual/5.2/"><b>Lua language reference</b></a><br>
-<a target = "_blank" href="http://notepad-plus-plus.org/"><b>Recommended code editor Notepad++<b></a> (Lightfield3 will include complete editor)
+You could use Lua script in previous LF2 engine. Now it was deprecated because C++11 and data files are fast and efficient too.<br>
+Create a windows application, and link the LFEngine library with VisualStudio:
+<ul>
+<li>add new Visual C++ Win32 ConsoleApplication empty project in LF3EngineWin32All solution</li>
+<li>click right mouse on references and add LFEngine library</li>
+</ul>
+
+That is all! You are ready to write game logic code.
 */
 
 
 /**
 @defgroup HelloWorld
-@ingroup Tutorials
 
-Let's start game programming and write a message!<br><br>
-[Lua example]<br>
+Let's start game programming and write a message!<br>
+Implement LF3Engine::LFEngine::LFGameEngine::LFIGame interface:<br><br>
+[Game.h]<br>
 @code
-function LFGame:OnInitGame()
-	LFLogger:WriteOutput("Hello world!")
-end
+#include "../LFEngine/LFGameEngine/LFIGame.h"
+
+class Game final : public LF3Engine::LFEngine::LFGameEngine::LFIGame
+{
+public:
+	//LFIGame functions
+	void OnInitGame() override;
+	void OnLoadedGame() override;
+	void OnTerminateGame() override;
+	void OnButtonPressRelease(const LF3Engine::LFEngine::LFInput::HardwareButtonEventArgs &args) override;
+	void OnPointerPressRelease(const LF3Engine::LFEngine::LFInput::PointerPressReleaseEventArgs &args) override;
+	void OnPointerMove(const LF3Engine::LFEngine::LFInput::PointerMoveEventArgs &args) override;
+};
 @endcode
+
+Start game engine and register this class:<br><br>
+[Main.cpp]<br>
+@code
+#include "Game.h"
+#include "..\LFEngine\LFGameEngine\LF3GameEngine.h"
+#include "..\LFEngine\LFCore\LFCommon\LFMemoryManager.h"
+#include "..\LFEngine\LFCore\LFCommon\LFSystemData.h"
+#include "..\LFEngine\LFData\LFAppData.h"
+
+using namespace LF3Engine::LFEngine::LFGameEngine;
+using namespace LF3Engine::LFEngine::LFCore::LFCommon;
+
+void main(int argc, char *argv[])
+{
+	LFSystemData::SetAppData({ argc, false, argv, "", "" });
+
+	LF3GameEngine::CreateInstance(LFMemoryManager::New<Game>(INFO));
+	LF3GameEngine::ReleaseInstance();
+
+	LFMemoryManager::WriteStatistics(false);
+
+	system("pause");
+}
+@endcode
+
+Write the message:<br><br>
+[Game.cpp]<br>
+@code
+#include "Game.h"
+#include "../LFEngine/LFCore/LFPatterns/LFIoc.h"
+#include "../LFEngine/LFCore/LFIO/LFLogger.h"
+#include "../LFEngine/LFAudio/LFAudioSystem.h"
+#include "../LFEngine/LFCore/LFCommon/LFString.h"
+#include "../LFEngine/LFInput/LFInputSystem.h"
+
+using namespace LF3Engine::LFEngine::LFCore::LFPatterns;
+using namespace LF3Engine::LFEngine::LFCore::LFIO;
+using namespace LF3Engine::LFEngine::LFAudio;
+using namespace LF3Engine::LFEngine::LFCore::LFCommon;
+
+void Game::OnInitGame()
+{}
+
+void Game::OnLoadedGame()
+{
+	LFIoc<LFLogger>::Get().WriteOutput("HelloWorld!");
+}
+
+void Game::OnTerminateGame()
+{}
+
+void Game::OnButtonPressRelease(const LF3Engine::LFEngine::LFInput::HardwareButtonEventArgs &args)
+{}
+
+void Game::OnPointerPressRelease(const LF3Engine::LFEngine::LFInput::PointerPressReleaseEventArgs &args)
+{}
+
+void Game::OnPointerMove(const LF3Engine::LFEngine::LFInput::PointerMoveEventArgs &args)
+{}
+
+@endcode
+
+<img src="../Res/LFTutorialHelloWorld.jpg" alt="Tutorial Hello World"><br>
 */
 
 
 /**
 @defgroup PlayAudio
-@ingroup Tutorials
 
-Play background music and sfx with touch event!<br><br>
-[Lua example]<br>
-@code  
-function LFGame:OnInitGame()
-	--LFAudio:SetVolumeOn("CH_MUSIC", true) --override config options
-	--LFAudio:SetVolume("CH_MUSIC", 99) --override config options
-	LFAudio:Play("CH_MUSIC", "Test/music.ogg")
-end
+You can play sfx and music files with audio system like .wav and .ogg fomats.
+Put a simple code in OnLoaded game event:<br><br>
+[Game.cpp]<br>
+@code
+void Game::OnLoadedGame()
+{
+	LFIoc<LFAudioSystem *>::Get()->PlayMusic("music.ogg");
+}
+@endcode
 
-function LFInput:OnPointerPressed(pointer, posX, posY)
-	--LFAudio:SetVolumeOn("CH_SFX", true) --override config options
-	--LFAudio:SetVolume("CH_SFX", 99) --override config options
-	LFAudio:Play("CH_SFX", "Test/sfx.wav")
-end
+Audio settings were loaded from settings file, but you can set these settings manually with C++ code:<br><br>
+[Game.cpp]<br>
+@code
+void Game::OnLoadedGame()
+{
+	LFIoc<LFAudioSystem *>::Get()->SetIsVolumeOnSfx(true);
+	LFIoc<LFAudioSystem *>::Get()->SetVolumeSfx(1.0); //volume 0.0 to 1.0
+	LFIoc<LFAudioSystem *>::Get()->SetIsVolumeOnMusic(true);
+	LFIoc<LFAudioSystem *>::Get()->SetVolumeMusic(0.5); //volume 0.0 to 1.0
+}
 @endcode
 */
 
 
 /**
-@defgroup Events
-@ingroup Tutorials
+@defgroup Input
 
-Which events can you use in the game?<br><br>
-[Lua example]<br>
+Input system available detect mouse, touch/screen and keyboard/hardware button events.
+Put a simple code in OnButtonPressRelease, OnPointerPressRelease and OnPointerMove events:<br><br>
+[Game.cpp]<br>
 @code
-function LFGame:OnInitGame()
-end
+void Game::OnButtonPressRelease(const HardwareButtonEventArgs &args)
+{
+	if (args.isPressed)
+		LFIoc<LFLogger>::Get().WriteOutput("[--Game--] OnButtonPress()");
+	else
+		LFIoc<LFLogger>::Get().WriteOutput("[--Game--] OnButtonRelease()");
+}
 
-function LFGame:OnTerminateGame()
-end
+void Game::OnPointerPressRelease(const PointerPressReleaseEventArgs &args)
+{
+	if (args.isPressed)
+		LFIoc<LFLogger>::Get().WriteOutput(LFString("[--Game--] OnPointerPress() X: ") + args.x + " Y: " + args.y);
+	else
+		LFIoc<LFLogger>::Get().WriteOutput(LFString("[--Game--] OnPointerRelease() X: ") + args.x + " Y: " + args.y);
+}
 
-
-function LFInput:OnPointerPressed(pointer, posX, posY)
-end
-
-function LFInput:OnPointerReleased(pointer, posX, posY)
-end
-
-
-function LFInput:OnButtonPressed(button)
-end
-
-function LFInput:OnButtonReleased(button)
-end
-
-
-function LFInput:OnControlPressed(sender)
-end
+void Game::OnPointerMove(const PointerMoveEventArgs &args)
+{
+	LFIoc<LFLogger>::Get().WriteOutput(LFString("[--Game--] OnPointerMove() X: ") + args.x + " Y: " + args.y);
+}
 @endcode
+
+<img src="../Res/LFTutorialInput.jpg" alt="Tutorial Input"><br>
 */
 
-
-/**
-@defgroup EventExamples
-@ingroup Tutorials
-
-Some examples how can you use these.<br><br>
-[Lua example]<br>
-@code
-function LFInput:OnPointerPressed(pointer, posX, posY)
-	LFLogger:WriteOutput(pointer .. " pressed" .. " x:" .. posX .. ", y:" .. posY)
-end
-
-function LFInput:OnPointerReleased(pointer, posX, posY)
-	LFLogger:WriteOutput(pointer .. " released" .. " x:" .. posX .. ", y:" .. posY)
-end
-
-function LFInput:OnButtonPressed(button)
-	LFLogger:WriteOutput(button .. " button pressed")
-end
-
-function LFInput:OnButtonReleased(button)
-	LFLogger:WriteOutput(button .. " button released")
-	
-	if button == "BT_BACK" then
-		LFGame:Exit()
-	end
-end
-
-function LFInput:OnControlPressed(sender)
-	LFLogger:WriteOutput(sender:GetName())
-end
-@endcode
-*/
-
-
-/**
-@defgroup Controls
-@ingroup Tutorials
-
-Do you need button, slider etc.? This tutorial shows you game controls.<br><br>
-[Lua example]<br>
-@code
-LFScript:LoadScript("Material/FontMaterial")
-LFScript:LoadScript("Material/ControlMaterial")
-LFScript:LoadScript("Test/Material/MenuMaterial")
-
-msgBack = nil
-msgNewGame = nil
-
-menuScreen = nil
-menuScreen2 = nil
-
-function LFGame:OnInitGame()
-	--[[ 
-	background
-	--]]
-	background = LFSprite.New(menuMaterial, {}, {name = "background"})
-	
-	--[[ 
-	LFLabelControl
-	--]]
-	lblLorem = LFLabelControl.New(fontMaterial, {name = "lblLorem", posX = 100, posY = 0, text = "PRESS SOUND UP BUTTON!"}) --lblLorem = LFLabelControl.New(fontMaterial, {name = "lblLorem", posX = 0, posY = 0, text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"})
-	lblCat = LFLabelControl.New(fontMaterial, {name = "lblCat", posX = 50, posY = 20, text = "ITS WORKING GOOD...!?"}) --lblCat = LFLabelControl.New(fontMaterial, {name = "lblCat", posX = 0, posY = 20, text = "1234567890: .!?"})
-	
-	--[[ 
-	LFNumberLabelControl
-	--]]
-	numlblScore = LFNumberLabelControl.New(fontMaterial, {name = "numlblScore", posX = 0, posY = 40, value = 2, digits = 4})	
-	LFLogger:WriteOutput("value = " .. numlblScore:GetValue())
-	numlblScore:SetValue(198676)
-	LFLogger:WriteOutput("value = " .. numlblScore:GetValue())
-	
-	--[[ 
-	LFLabelFPSControl
-	--]]
-	fontMaterial.textureWidth = 40
-	fontMaterial.textureHeight = 60
-	lblFPS = LFLabelFPSControl.New(fontMaterial, {name = "FPS", posX = 620, posY = 550})
-	
-	--[[ 
-	LFLevelLabelControl
-	--]]
-	fontMaterial.textureWidth = 28
-	fontMaterial.textureHeight = 45
-	lblLevel = LFLevelLabelControl.New(fontMaterial, controlMaterial, controlMaterial.atlas["level"], {name = "lblLevel", posX = 100, posY = 200, value = 225, digits = 3})
-	
-	--[[ 
-	LFTimeLabelControl
-	--]]
-	lblTime = LFTimeLabelControl.New(fontMaterial, controlMaterial, controlMaterial.atlas["timer"], {name = "lblTime", posX = 100, posY = 300, digits = 3},
-		{minTime = 0, maxTime = 10, interval = 1, isIncrement = false})
-	
-	--[[ 
-	LFButtonControl
-	--]]
-	btnBack = LFButtonControl.New(fontMaterial, controlMaterial, controlMaterial.atlas["back"], controlMaterial.atlas["backTouched"], 
-		{name = "btnBack", posX = 100, posY = 100, text = ""})
-	
-	fontMaterial.textureWidth = 60
-	fontMaterial.textureHeight = 60
-	btnExit = LFButtonControl.New(fontMaterial, controlMaterial, controlMaterial.atlas["button"], controlMaterial.atlas["buttonTouched"], 
-		{name = "btnExit", posX = 50, posY = 450, text = "EXIT"})
-		
-	btnTest = LFButtonControl.New(fontMaterial, controlMaterial, controlMaterial.atlas["button"], controlMaterial.atlas["buttonTouched"], 
-		{name = "btnTest", posX = 210, posY = 100, text = "TEST"})
-	
-	--[[
-	LFCheckButtonControl
-	--]]
-	chkMusic = LFCheckButtonControl.New(controlMaterial, 
-		controlMaterial.atlas["musicOff"], controlMaterial.atlas["musicOn"], controlMaterial.atlas["musicOffTouched"], controlMaterial.atlas["musicOnTouched"],
-		{name = "chkMusic", posX = 300, posY = 200, isChecked = false})
-	
-	--[[
-	LFSlider
-	--]]
-	controlMaterial.textureWidth = 100
-	controlMaterial.textureHeight = 100
-	sliderMusic = LFSliderControl.New(controlMaterial, controlMaterial.atlas["potmeter"], controlMaterial.atlas["potmeterTouched"],
-		{name = "sliderMusic", posX = 420, posY = 200, width = 300, value = 100})
-		
-	--[[
-	LFMessageBoxControl
-	--]]
-	fontMaterial.textureWidth = 25
-	fontMaterial.textureHeight = 45
-		
-	mboxTimeInfo = LFMessageBoxControl.New(fontMaterial, controlMaterial, controlMaterial.atlas["messageBox"], controlMaterial.atlas["messageButton"], controlMaterial.atlas["messageButtonTouched"],
-		{name = "mboxTimeInfo", messageLine1 = "", messageLine2 = "TIME OUT!", messageLine3 = "", messageType = "info"})
-	mboxTimeInfo:SetIsVisible(false)
-	
-	mboxExit = LFMessageBoxControl.New(fontMaterial, controlMaterial, controlMaterial.atlas["messageBox"], controlMaterial.atlas["messageButton"], controlMaterial.atlas["messageButtonTouched"],
-		{name = "mboxExit", messageLine1 = "DO YOU WANT", messageLine2 = "TO EXIT", messageLine3 = "FROM GAME?", messageType = "question"})
-	
-	layer = LFLayer.New("layer")
-	layer:Add2dObject(background)
-	layer:Add2dObject(lblLorem)
-	layer:Add2dObject(lblCat)
-	layer:Add2dObject(numlblScore)
-	layer:Add2dObject(lblFPS)
-	layer:Add2dObject(lblLevel)
-	layer:Add2dObject(lblTime)
-	layer:Add2dObject(btnBack)
-	layer:Add2dObject(btnExit)
-	layer:Add2dObject(btnTest)
-	layer:Add2dObject(chkMusic)
-	layer:Add2dObject(sliderMusic)
-	layer:WriteComponentNames()
-	
-	layerMboxes = LFLayer.New("layerMsgBoxes")
-	layerMboxes:Add2dObject(mboxTimeInfo)
-	layerMboxes:Add2dObject(mboxExit)
-	mboxTimeInfo:SetIsVisible(false)
-	mboxExit:SetIsVisible(false)
-	layerMboxes:WriteComponentNames()
-	
-	menuScreen = LFScreen.New("MenuScreen")
-	menuScreen:AddLayer(layer)
-	menuScreen:AddLayer(layerMboxes)
-	layerMboxes:SetIsVisible(false)
-	menuScreen:WriteLayerNames()
-	
-	LFSceneGraph:AddScreen(menuScreen)
-	LFSceneGraph:WriteScreenNames()
-	
-	btnBack2 = LFButtonControl.New(fontMaterial, controlMaterial, controlMaterial.atlas["back"], controlMaterial.atlas["backTouched"], 
-		{name = "btnBack2", posX = 100, posY = 100, text = ""})
-	layer2 = LFLayer.New("layer2")
-	layer2:Add2dObject(btnBack2)
-	layer2:WriteComponentNames()
-	menuScreen2 = LFScreen.New("MenuScreen2")
-	menuScreen2:AddLayer(layer2)
-	menuScreen2:WriteLayerNames()
-	LFSceneGraph:AddScreen(menuScreen2)
-	LFSceneGraph:WriteScreenNames()
-end
-
-function LFInput:OnButtonReleased(button)
-	if (button == "BT_BACK") then
-		LFGame:Exit()
-	end
-end
-
-function LFInput:OnControlPressed(sender)
-	LFLogger:WriteOutput(sender:GetName())
-	
-	if (sender:GetName() == "btnExit") then
-		mboxExit:SetIsVisible(true)
-		layerMboxes:SetIsVisible(true)
-	end
-	
-	if (sender:GetName() == "btnTest") then
-		chkMusic = LFSceneGraph:FindScreen("MenuScreen"):FindLayer("layer"):Find2dObject("chkMusic")
-		chkMusic:SetIsChecked(not chkMusic:GetIsChecked())
-		
-		sliderMusic = LFSceneGraph:FindScreen("MenuScreen"):FindLayer("layer"):Find2dObject("sliderMusic")
-		sliderMusic:SetValue(50)
-		LFLogger:WriteOutput("slider value " .. tostring(sliderMusic:GetValue()))
-	end
-	
-	if (sender:GetName() == "btnBack") then
-		menuScreen2:SetActive()
-	end
-	
-	if (sender:GetName() == "btnBack2") then
-		menuScreen:SetActive()
-	end
-	
-	if (sender:GetName() == "mboxExitYes") then
-		LFGame:Exit()
-	end
-	
-	if (sender:GetName() == "mboxExitNo") then
-		mboxExit:SetIsVisible(false)
-		layerMboxes:SetIsVisible(false)
-	end
-	
-	if (sender:GetName() == "mboxTimeInfoOk") then
-		mboxTimeInfo:SetIsVisible(false)
-		layerMboxes:SetIsVisible(false)
-	end
-end
-
-function LFTimeLabelControl:OnTick(sender)
-	LFLogger:WriteOutput("Time out. " .. sender:GetName())
-	mboxTimeInfo:SetIsVisible(true)
-	layerMboxes:SetIsVisible(true)
-	
-	sender:Reset()
-	sender:Start()
-end
-
-function LFCheckButtonControl:OnCheckChanged(sender)
-	LFLogger:WriteOutput(sender:GetName() .. " OnCheckChanged " .. tostring(sender:GetIsChecked()))
-end
-
-function LFSliderControl:OnValueChanged(sender)
-	LFLogger:WriteOutput(sender:GetName() .. " OnValueChanged " .. tostring(sender:GetValue()))
-	
-	lblLorem = LFSceneGraph:FindScreen("MenuScreen"):FindLayer("layer"):Find2dObject("lblLorem")
-		if (lblLorem ~= nil) then
-			LFLogger:WriteOutput(lblLorem:GetName() .. " delete")
-			lblLorem:SetIsAlive(false)
-		end
-		
-		numlblScore = LFSceneGraph:FindScreen("MenuScreen"):FindLayer("layer"):Find2dObject("numlblScore")
-		score = numlblScore:GetValue()
-		numlblScore:SetValue(score + 50)
-		LFLogger:WriteOutput("value = " .. numlblScore:GetValue())
-		
-		lblLevel = LFSceneGraph:FindScreen("MenuScreen"):FindLayer("layer"):Find2dObject("lblLevel")
-		level = lblLevel:GetValue()
-		lblLevel:SetValue(level + 1)
-		LFLogger:WriteOutput("value = " .. lblLevel:GetValue())
-		
-		lblTime = LFSceneGraph:FindScreen("MenuScreen"):FindLayer("layer"):Find2dObject("lblTime")
-		lblTime:Start()
-end
-@endcode
-*/
 
 /**
 @defgroup SceneGraph
-@ingroup Tutorials
 
-This tutorial shows how can build the complete game scene.<br><br>
-[Lua example]<br>
+As you can see in the log, scene graph screated by engine. (SceneGraph, Screens and layers)<br> 
+Splash screen appears automatic with an image. First splash second is OnInitGame event time, last second is OnLoadedGame time.
+Take screen creating and content loading into OnInitGame event and take next screen things (for example play music) into OnLoadedGame event.
+Let's create MenuScreen wrapper class:<br><br>
+[MenuScreen.h]<br>
 @code
-LFScript:LoadScript("Test/Material/ArrowMaterial")
-LFScript:LoadScript("Test/Material/DukeMaterial")
-LFScript:LoadScript("Test/Material/BeeMaterial")
+namespace LF3Engine { namespace LFEngine { namespace LFScene
+{
+	class LFScreen;
+}}}
 
-function LFGame:OnInitGame()
-	sprite0 = LFSprite.New(beeMaterial, beeMaterial.atlas["flying"], {name = "sprite0", posX = 300, posY = 300})
-	sprite1 = LFSprite.New(arrowMaterial, {}, {name = "sprite1"})
-	sprite2 = LFSprite.New(arrowMaterial, {}, {name = "sprite2", posX = 0, posY = 300})
-	sprite3 = LFSprite.New(arrowMaterial, {}, {name = "sprite3", posY = 0, posX = 400})
-	
-	dukeMaterial.textureWidth = 100
-	dukeMaterial.textureHeight = 150
-	sprite4 = LFSprite.New(dukeMaterial, {}, {name = "sprite4", posX = 400, posY = 300})
-	
-	dukeMaterial.textureWidth = 200
-	dukeMaterial.textureHeight = 200
-	sprite5 = LFSprite.New(dukeMaterial, {}, {name = "sprite5", posX = 500, posY = 400})
-	
-	sprite6 = LFSprite.New(beeMaterial, beeMaterial.atlas["attack"], {name = "sprite6", posX = 10, posY = 10})
-	
-	layer = LFLayer.New("layer")
-	layer:Add2dObject(sprite0)
-	layer:Add2dObject(sprite1)
-	layer:Add2dObject(sprite2)
-	layer:Add2dObject(sprite3)
-	layer:Add2dObject(sprite4)
-	layer:Add2dObject(sprite5)
-	layer:Add2dObject(sprite6)
-	layer:WriteComponentNames()
-	
-	menuScreen = LFScreen.New("MenuScreen")
-	menuScreen:AddLayer(layer)
-	menuScreen:WriteLayerNames()
-	
-	LFSceneGraph:AddScreen(menuScreen)
-	LFSceneGraph:WriteScreenNames()
-end
+class MenuScreen final
+{
+	LF3Engine::LFEngine::LFScene::LFScreen *screen;
 
-function LFInput:OnPointerReleased(pointer, posX, posY)
-	sprite = LFSceneGraph:FindScreen("MenuScreen"):FindLayer("layer"):Find2dObject("sprite0")
-	if  sprite ~= nil then
-		sprite:SetIsAlive(false)
-		sprite = nil
-	end
-	
-	LFSceneGraph:WriteScreenNames()
-	
-	screen = LFSceneGraph:FindScreen("MenuScreen")
-	screen:WriteLayerNames()
-	
-	layer = screen:FindLayer("layer")
-	layer:WriteComponentNames()
-	
-	if layer:Find2dObject("sprite0") ~= nil then
-		LFLogger:WriteOutput("layer:Find2dObject " .. layer:Find2dObject("sprite0"):GetName())
-	end
-end
+public:
+	MenuScreen();
+
+	bool GetIsActive() const;
+
+	void OnLoadedGame() const;
+	void Show(bool isPlayMusic) const;
+};
+@endcode
+
+[MenuScreen.cpp]<br>
+@code
+MenuScreen::MenuScreen()
+{
+	screen = LFIoc<LFSceneGraph *>::Get()->FindScreen(LFString(LFSystemInfo::LFGameScreenName));
+	screen->AddBackground(LFString("menuImage"), LFString("menuBackground.jpg"));
+}
+
+bool MenuScreen::GetIsActive() const
+{
+	return screen->GetIsActive();
+}
+
+void MenuScreen::OnLoadedGame() const
+{
+	Show(true);
+}
+
+void MenuScreen::Show(bool isPlayMusic) const
+{
+	LFIoc<LFLogger>::Get().WriteOutput(">>Show MenuScreen");
+	screen->SetActive();
+
+	if (isPlayMusic)
+		LFIoc<LFAudioSystem *>::Get()->PlayMusic("music.ogg");
+}
+@endcode
+
+Create MenuScreen object:<br><br>
+[Game.h]<br>
+@code
+class MenuScreen;
+
+class Game final : public LF3Engine::LFEngine::LFGameEngine::LFIGame
+{
+	MenuScreen *menuScreen;
+...
+};
+@endcode
+
+[Game.cpp]<br>
+@code
+void Game::OnInitGame()
+{
+	menuScreen = LFMemoryManager::New<MenuScreen>(INFO);
+}
+
+void Game::OnLoadedGame()
+{
+	menuScreen->OnLoadedGame();
+}
+
+void Game::OnTerminateGame()
+{
+	LFMemoryManager::Delete(menuScreen);
+}
+@endcode
+*/
+
+/**
+@defgroup ComplexScene
+
+You can see an example about complex scene with GUI elements, animated, movable sprites and much more.
+Here you are the complex scene code:<br><br>
+[Game.cpp]<br>
+@code
+#include "GameScreen.h"
+#include "GameData.h"
+#include "..\LFEngine\LFGameEngine\LF3GameEngine.h"
+#include "..\LFEngine\LFScene\LFScreen.h"
+#include "..\LFEngine\LFCore\LFPatterns\LFIoc.h"
+#include "..\LFEngine\LFScene\LFSceneGraph.h"
+#include "..\LFEngine\LFCore\LFCommon\LFSystemData.h"
+#include "..\LFEngine\LFCore\LFCommon\LFString.h"
+#include "..\LFEngine\LFCore\LFIO\LFLogger.h"
+#include "..\LFEngine\LFAudio\LFAudioSystem.h"
+#include "..\LFEngine\LFInput\LFInputSystem.h"
+#include "..\LFEngine\LFGUI\LFImageControl.h"
+#include "..\LFEngine\LFGUI\LFSpriteControl.h"
+#include "..\LFEngine\LFGUI\LFFontControl.h"
+#include "..\LFEngine\LFGUI\LFLabelControl.h"
+#include "..\LFEngine\LFGUI\LFFPSLabelControl.h"
+#include "..\LFEngine\LFGUI\LFTouchableControl.h"
+#include "..\LFEngine\LFGUI\LFButtonControl.h"
+#include "..\LFEngine\LFGUI\LFCheckBoxControl.h"
+#include "..\LFEngine\LFGUI\LFImageButtonControl.h"
+#include "..\LFEngine\LFGUI\LFAnimatedSpriteControl.h"
+#include "..\LFEngine\LFGUI\LFMovableSpriteControl.h"
+#include "..\LFEngine\LFCore\LFMath\LFRandom.h"
+#include "..\LFEngine\LFCore\LFMath\LFVector4D.h"
+
+using namespace LF3Engine::LFEngine::LFCore::LFPatterns;
+using namespace LF3Engine::LFEngine::LFScene;
+using namespace LF3Engine::LFEngine::LFCore::LFCommon;
+using namespace LF3Engine::LFEngine::LFCore::LFIO;
+using namespace LF3Engine::LFEngine::LFCore::LFCollections;
+using namespace LF3Engine::LFEngine::LFAudio;
+using namespace LF3Engine::LFEngine::LFInput;
+using namespace LF3Engine::LFEngine::LFGUI;
+using namespace LF3Engine::LFEngine::LFCore::LFMath;
+using namespace LF3Engine::LFEngine::LFData;
+using namespace LF3Engine::LFEngine::LFGameEngine;
+
+namespace Solar10
+{
+	GameScreen::GameScreen()
+	{
+		screen = LFIoc<LFSceneGraph *>::Get()->FindScreen(LFString(LFSystemData::LFGameScreenName));
+	}
+
+	bool GameScreen::GetIsActive() const
+	{
+		return screen->GetIsActive();
+	}
+
+	void GameScreen::OnLoadedGame()
+	{
+		screen->AddBackground(LFString("menuImage"), LFString("gameBackground.jpg"));
+
+		////
+		//font -engine code- test
+		////
+		auto firstCharacter = LFMemoryManager::New<LFFontControl>(INFO, LFString("font1"), 'M', LFRectangle(0, 0, guiTileSize.x, guiTileSize.y));
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName), firstCharacter);
+		firstCharacter->SetColor(LFColor(LFColor::Red));
+		firstCharacter->SetCharacter('K');
+
+		auto secondCharacter = LFMemoryManager::New<LFFontControl>(INFO, LFString("font2"), 'E', LFRectangle(100, 50, guiTileSize.x, guiTileSize.y));
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName), secondCharacter);
+		secondCharacter->SetColor(LFColor(LFColor::Blue));
+
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName), LFMemoryManager::New<LFFontControl>(INFO, LFString("font3"), 'N',
+			LFRectangle(200, 100, guiTileSize.x, guiTileSize.y)));
+
+		auto lastCharacter = LFMemoryManager::New<LFFontControl>(INFO, LFString("font4"), 'U', LFRectangle(300, 150, guiTileSize.x, guiTileSize.y));
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName), lastCharacter);
+		lastCharacter->SetCharacter('O');
+
+		////
+		//sprites
+		////
+		screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), LFMemoryManager::New<LFSpriteControl>(INFO, LFString("bubble1"),
+			LFRectangle(0, 0, gameTileSize.x, gameTileSize.y), GameData::Bubble, false, LFColor(LFColor::Purple)));
+		screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), LFMemoryManager::New<LFSpriteControl>(INFO, LFString("bubble2"),
+			LFRectangle(LFSystemData::LFDefaultWindowWidth - gameTileSize.x, 0, gameTileSize.x, gameTileSize.y), GameData::Bubble, false, LFColor(LFColor::Blue)));
+		screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), LFMemoryManager::New<LFSpriteControl>(INFO, LFString("bubble3"),
+			LFRectangle(0, LFSystemData::LFDefaultWindowHeight - gameTileSize.y, gameTileSize.x, gameTileSize.y), GameData::Bubble, false, LFColor(LFColor::LightGray)));
+		screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), LFMemoryManager::New<LFSpriteControl>(INFO, LFString("bubble4"),
+			LFRectangle(LFSystemData::LFDefaultWindowWidth - gameTileSize.x, LFSystemData::LFDefaultWindowHeight - gameTileSize.y, 
+				gameTileSize.x, gameTileSize.y), GameData::Bubble, false, LFColor(LFColor::Brown)));
+		screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), LFMemoryManager::New<LFSpriteControl>(INFO, LFString("bubble5"),
+			LFRectangle(LFSystemData::LFDefaultWindowWidth / 2 - gameTileSize.x / 2, LFSystemData::LFDefaultWindowHeight / 2 - gameTileSize.y / 2,
+				gameTileSize.x, gameTileSize.y), GameData::Bubble, false, LFColor(LFColor::Red)));
+		screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), LFMemoryManager::New<LFSpriteControl>(INFO, LFString("topWall"),
+			LFRectangle(gameTileSize.y, 0,
+				gameTileSize.x, gameTileSize.y), GameData::TopWall, false, LFColor(LFColor::White)));
+
+		////
+		//control -engine code- children test
+		////
+		auto sprite = LFMemoryManager::New<LFSpriteControl>(INFO, LFString("bubble12"),
+			LFRectangle(0, 0, gameTileSize.x, gameTileSize.y), GameData::Bubble, false, LFColor(LFColor::Aqua));
+		sprite->Add(LFMemoryManager::New<LFSpriteControl>(INFO, LFString("bubble22"),
+			LFRectangle(60, 0, gameTileSize.x, gameTileSize.y), GameData::Bubble, false, LFColor(LFColor::DarkOrange)));
+		screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), sprite);
+
+		sprite->SetPosition(LFVector2D(100, 100));
+		sprite->SetColor(LFColor(LFColor::Green));
+
+		////
+		//Label test
+		////
+		//auto firstLabel = LFMemoryManager::New<LFLabelControl>(INFO, LFString("label1"), LFString(1234), LFRectangle(0, 0, fontSize.x, fontSize.y));
+		auto firstLabel = LFMemoryManager::New<LFLabelControl>(INFO, LFString("label1"), LFString("TETO"), LFRectangle(100, 400, guiTileSize.x, guiTileSize.y));
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName), firstLabel);
+		firstLabel->SetColor(LFColor(LFColor::DeepPink));
+		firstLabel->SetText(LFString("ALMA"));
+
+		////
+		//FPSLabel test
+		////
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName),
+			LFMemoryManager::New<LFFPSLabelControl>(INFO, LFRectangle(LFSystemData::LFDefaultWindowWidth / 2, LFSystemData::LFDefaultWindowHeight - guiTileSize.y,
+				guiTileSize.x, guiTileSize.y), LFColor(LFColor::Black)));
+
+		////
+		//Touchable control test
+		////
+		auto touchable = LFMemoryManager::New<LFTouchableControl>(INFO, LFString("touch"), LFRectangle(0, guiTileSize.y, guiTileSize.x, guiTileSize.y),
+			LFVector2D(LFSystemData::LFDefaultWindowWidth, LFSystemData::LFDefaultWindowHeight / 2));
+		touchable->OnControlRelease += [&, touchable](const PointerReleaseEventArgs &args) { OnTouchableControlRelease(touchable, args); };
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName), touchable);
+
+		////
+		//Button control test
+		////
+		auto button = LFMemoryManager::New<LFButtonControl>(INFO, LFString("button"), 2, LFString("ADD"), 
+			LFRectangle(100, LFSystemData::LFDefaultWindowHeight / 2, guiTileSize.x, guiTileSize.y));
+		button->OnControlRelease += [&, button](const PointerReleaseEventArgs &args) { OnTouchableControlRelease(button, args); };
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName), button);
+
+		////
+		//CheckBox control test
+		////
+		auto checkBox = LFMemoryManager::New<LFCheckBoxControl>(INFO, LFString("chkBox"), 
+			LFRectangle(0, LFSystemData::LFDefaultWindowHeight / 2, guiTileSize.x, guiTileSize.y),
+				true, LFSystemData::CheckMusicOn, LFSystemData::CheckMusicOff);
+		checkBox->OnControlRelease += [&, checkBox](const PointerReleaseEventArgs &args) { OnTouchableControlRelease(checkBox, args); };
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName), checkBox);
+
+		////
+		//ImageButton control test
+		////
+		auto imageButton = LFMemoryManager::New<LFImageButtonControl>(INFO, LFString("btnImage"), 
+			LFRectangle(0, LFSystemData::LFDefaultWindowHeight / 2 + guiTileSize.y, guiTileSize.x, guiTileSize.y),
+				LFSystemData::ButtonBack);
+		imageButton->OnControlRelease += [&, imageButton](const PointerReleaseEventArgs &args) { OnTouchableControlRelease(imageButton, args); };
+		screen->AddGUIObject(LFString(LFSystemData::LFGUILayerName), imageButton);
+
+		////
+		//Animated sprite
+		////
+		screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), LFMemoryManager::New<LFAnimatedSpriteControl>(INFO, LFString("boom"),
+			LFRectangle(LFSystemData::LFDefaultWindowWidth / 2, 0, gameTileSize.x, gameTileSize.y), GameData::AnimatedBoom, 100, false, true));
+
+		////
+		//Movable (physics) sprite
+		////
+		LFMovableSpriteControl::SetWalls({ 0.0f, 0.0f, static_cast<float>(LFSystemData::LFDefaultWindowWidth), static_cast<float>(LFSystemData::LFDefaultWindowHeight) });
+
+		auto movBubble = LFMemoryManager::New<LFMovableSpriteControl>(INFO, LFString("movBubble"), 
+			LFRectangle(LFSystemData::LFDefaultWindowWidth / 2, gameTileSize.y * 2, gameTileSize.x, gameTileSize.y),
+				GameData::Bubble, gameTileSize.x / 2.0f, LFColor(LFColor::Black)); //bounding Circle for bubbles
+		screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), movBubble);
+
+		////
+		//game screen
+		////
+		Show(true);
+	}
+
+	void GameScreen::Show(bool isPlayMusic) const
+	{
+		screen->SetActive();
+
+		//if (isPlayMusic)
+			//LFIoc<LFAudioSystem *>::Get()->PlayMusic("music.ogg");
+	}
+
+	void GameScreen::OnButtonPressRelease(const HardwareButtonEventArgs &args)
+	{
+		if (GetIsActive() && !args.isPressed && args.button == LFHardwareButtonTypes::Back)
+			screen->SetIsVisible(!screen->GetIsVisible());
+	}
+
+	void GameScreen::OnTouchableControlRelease(LFTouchableControl *sender, const PointerReleaseEventArgs &args)
+	{
+		LFIoc<LFLogger>::Get().WriteOutput(sender->GetName());
+
+		if (sender->GetName() == LFString("touch"))
+		{
+			//screen->SetIsVisible(!screen->GetIsVisible());
+
+			auto bubbleBos = LFVector2D(LFSystemData::LFDefaultWindowWidth / 2 - gameTileSize.x / 2, LFSystemData::LFDefaultWindowHeight - gameTileSize.y);
+			auto bubbleMove = LFVector2D(args.x / LFSystemData::GetWindowWidthRelativeScale(), args.y / LFSystemData::GetWindowHeightRelativeScale()) - bubbleBos;
+			LFColor colors[5] = { LFColor(LFColor::White), LFColor(LFColor::Green), LFColor(LFColor::Red), LFColor(LFColor::Orange), LFColor(LFColor::Black) };
+
+			auto bubble = LFMemoryManager::New<LFMovableSpriteControl>(INFO, LFString("movBubble") + bubbles++, 
+				LFRectangle(bubbleBos.x, bubbleBos.y, gameTileSize.x, gameTileSize.y), GameData::Bubble, gameTileSize.x / 2.0f,
+					colors[LFRandom::CreateRandom(0, 4)]);
+			bubble->OnSpriteTouch += [&, bubble](const SpriteTouchEventArgs &spriteArgs) { OnSpriteTouch(bubble, spriteArgs); };
+			bubble->SetRefreshSpeed(16);
+			bubble->SetMove(bubbleMove);
+
+			screen->AddGUIObject(LFString(LFSystemData::LFGameLayerName), bubble);
+		}
+		else if (sender->GetName() == LFString("chkBox"))
+		{
+			if (auto chkBox = dynamic_cast<LFCheckBoxControl *>(sender))
+				chkBox->GetIsChecked() ? LFIoc<LFLogger>::Get().WriteOutput("checked") : LFIoc<LFLogger>::Get().WriteOutput("unchecked");
+		}
+		else if (sender->GetName() == LFString("btnImage"))
+			LF3GameEngine::Instance()->Exit();
+	}
+
+	void GameScreen::OnSpriteTouch(LFMovableSpriteControl *sender, const SpriteTouchEventArgs &args)
+	{
+		if (args.anotherSprite == nullptr) //touch wall bottom
+		{
+			//LFIoc<LFLogger>::Get().WriteOutput("Touch wall bottom");
+		}
+		else //touch to another movable sprite
+		{
+			//LFIoc<LFLogger>::Get().WriteOutput("Touch another sprite");
+		}
+	}
+}
 @endcode
 */

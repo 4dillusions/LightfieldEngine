@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFDateTime.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameComponent.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameComponentList.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFMemoryManager.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFString.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTime.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTimer.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFVFSManager.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFWatch.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFFile.cpp">
+      <Filter>LFCore\LFIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFLogger.cpp">
+      <Filter>LFCore\LFIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFCircle.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFColor.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMath.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMatrix3.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMatrix4.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFRandom.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFRectangle.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector2D.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector3D.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector4D.cpp">
+      <Filter>LFCore\LFMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGameEngine\LF3GameEngine.cpp">
+      <Filter>LFGameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGameEngine\LF3GameEngineFactory.cpp">
+      <Filter>LFGameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFInput\LFInputSystem.cpp">
+      <Filter>LFInput</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFInput\_Win32_\LFInputSystemWin32.cpp">
+      <Filter>LFInput\_Win32_</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFRenderWindow.cpp">
+      <Filter>LFRender</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFRenderWindowWin32.cpp">
+      <Filter>LFRender\_Win32_</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFAudio\LFAudioSystem.cpp">
+      <Filter>LFAudio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFAudio\_Win32_\LFAudioSystemWin32.cpp">
+      <Filter>LFAudio\_Win32_</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFData\LFOptionsData.cpp">
+      <Filter>LFData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFData\LFLevelData.cpp">
+      <Filter>LFData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFData\LFGameStateData.cpp">
+      <Filter>LFData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFJson.cpp">
+      <Filter>LFCore\LFIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFNetwork\LFCurl.cpp">
+      <Filter>LFNetwork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFScene\LFSceneGraph.cpp">
+      <Filter>LFScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFRenderSystemGLES20.cpp">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFRenderSystemD3D9.cpp">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFRenderComponent.cpp">
+      <Filter>LFRender</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFTexture.cpp">
+      <Filter>LFRender</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFTextureGLES20.cpp">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFTextureD3D9.cpp">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFVertexTextureData.cpp">
+      <Filter>LFRender</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFVertexTextureDataGLES20.cpp">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFVertexTextureDataD3D9.cpp">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFShaderEffect.cpp">
+      <Filter>LFRender</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectD3D9.cpp">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectGLES20.cpp">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFScene\LFScreen.cpp">
+      <Filter>LFScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFScene\LFLayer.cpp">
+      <Filter>LFScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameCompositeComponent.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFTimerControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFImageControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectBasicGLES20.cpp">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectBasicD3D9.cpp">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectNormalGLES20.cpp">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectNormalD3D9.cpp">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFTextRW.cpp">
+      <Filter>LFCore\LFIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFFontControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFSpriteControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFLabelControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFFPSLabelControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFTouchableControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFButtonControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFCheckBoxControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFSystemData.cpp">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFImageButtonControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFAnimatedSpriteControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFMovableSpriteControl.cpp">
+      <Filter>LFGUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="LFAudio">
+      <UniqueIdentifier>{2b63d17c-b67b-407b-8d2b-a37e6dd0c1a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFCore">
+      <UniqueIdentifier>{c0ef93f4-d63a-483f-b4f7-bacbcbefeff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFGameEngine">
+      <UniqueIdentifier>{7953ce2b-b39f-4abc-9278-671b259a49c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFInput">
+      <UniqueIdentifier>{90dbe3ff-6f6d-4018-af0d-d0a2750909bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFRender">
+      <UniqueIdentifier>{ee976f65-2be5-4103-a222-12ef6d3f37ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFCore\LFCollections">
+      <UniqueIdentifier>{41959eb1-da70-4c49-b497-a790e8c3af9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFCore\LFCommon">
+      <UniqueIdentifier>{3e288598-dd1b-4b8d-8372-8696e0e54787}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFCore\LFIO">
+      <UniqueIdentifier>{122e5f5e-3cc6-4937-bdbb-5ad9778cb09d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFCore\LFMath">
+      <UniqueIdentifier>{7bb4c866-ef9d-4782-8a46-d97d0ee5d4bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFCore\LFPatterns">
+      <UniqueIdentifier>{3c23f883-b1c6-498d-8665-cbe7453d628b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFInput\_Win32_">
+      <UniqueIdentifier>{e975ce01-d22c-447a-88f0-b4c2d6ccfc4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFRender\_Win32_">
+      <UniqueIdentifier>{59c6d62c-d7ad-4a4e-82c9-4dcf6171bb57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFAudio\_Win32_">
+      <UniqueIdentifier>{42396dcb-fdc8-444d-b35d-de46a5b21f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFData">
+      <UniqueIdentifier>{21aaf2a4-b351-4ec6-bfc1-0b7d98026b52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFNetwork">
+      <UniqueIdentifier>{08ad8eaa-1deb-43dc-a5d2-4c1d8f6a67b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFGUI">
+      <UniqueIdentifier>{4f6dca95-08df-4aa9-9045-d1bd592cd192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFScene">
+      <UniqueIdentifier>{a21da593-06ba-42ff-9131-bd48e501af63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFRender\LFGLES20">
+      <UniqueIdentifier>{da83d73c-b910-437f-aa34-a95ee42ec43b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFRender\_Win32_\LFD3D9">
+      <UniqueIdentifier>{c01bc2ba-9728-450a-9092-9ba301a1b769}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCore.h">
+      <Filter>LFCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFDictionary.h">
+      <Filter>LFCore\LFCollections</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFDictionaryNode.h">
+      <Filter>LFCore\LFCollections</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFLinkedList.h">
+      <Filter>LFCore\LFCollections</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFLinkedListNode.h">
+      <Filter>LFCore\LFCollections</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFList.h">
+      <Filter>LFCore\LFCollections</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFListNode.h">
+      <Filter>LFCore\LFCollections</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFDateTime.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFEvent.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameComponent.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameComponentList.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFMemoryManager.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFString.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTime.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTimer.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTuple.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFVFSManager.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFVFSPath.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFWatch.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFFile.h">
+      <Filter>LFCore\LFIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFLogger.h">
+      <Filter>LFCore\LFIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFLogMessageType.h">
+      <Filter>LFCore\LFIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFLogOutputType.h">
+      <Filter>LFCore\LFIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFSerializer.h">
+      <Filter>LFCore\LFIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFCircle.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFColor.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMath.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMatrix3.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMatrix4.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFRandom.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFRectangle.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector2D.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector3D.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector4D.h">
+      <Filter>LFCore\LFMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFPatterns\LFIoc.h">
+      <Filter>LFCore\LFPatterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGameEngine\LF3GameEngine.h">
+      <Filter>LFGameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGameEngine\LF3GameEngineFactory.h">
+      <Filter>LFGameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFInput\LFHardwareButtonTypes.h">
+      <Filter>LFInput</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFInput\LFInputSystem.h">
+      <Filter>LFInput</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFInput\_Win32_\LFInputSystemWin32.h">
+      <Filter>LFInput\_Win32_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFRenderWindow.h">
+      <Filter>LFRender</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFRenderWindowWin32.h">
+      <Filter>LFRender\_Win32_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFAudio\LFAudioSystem.h">
+      <Filter>LFAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFAudio\_Win32_\LFAudioSystemWin32.h">
+      <Filter>LFAudio\_Win32_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFIData.h">
+      <Filter>LFData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFOptionsData.h">
+      <Filter>LFData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFLevelData.h">
+      <Filter>LFData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFEditorData.h">
+      <Filter>LFData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFGameStateData.h">
+      <Filter>LFData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFJson.h">
+      <Filter>LFCore\LFIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFAppData.h">
+      <Filter>LFData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFNetwork\LFCurl.h">
+      <Filter>LFNetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFScene\LFSceneGraph.h">
+      <Filter>LFScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFRenderSystemGLES20.h">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFRenderSystemD3D9.h">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFRenderComponent.h">
+      <Filter>LFRender</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFRenderComponentList.h">
+      <Filter>LFRender</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFTexture.h">
+      <Filter>LFRender</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFTextureGLES20.h">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFTextureD3D9.h">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFVertexTextureData.h">
+      <Filter>LFRender</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFVertexTextureDataGLES20.h">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFVertexTextureDataD3D9.h">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFShaderEffect.h">
+      <Filter>LFRender</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectD3D9.h">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectGLES20.h">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFScene\LFScreen.h">
+      <Filter>LFScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFScene\LFLayer.h">
+      <Filter>LFScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameCompositeComponent.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFTimerControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFImageControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGameEngine\LFIGame.h">
+      <Filter>LFGameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectBasicGLES20.h">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectBasicD3D9.h">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectNormalGLES20.h">
+      <Filter>LFRender\LFGLES20</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectNormalD3D9.h">
+      <Filter>LFRender\_Win32_\LFD3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFIRenderSystem.h">
+      <Filter>LFRender</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFTextRW.h">
+      <Filter>LFCore\LFIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFFontControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFSpriteControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFLabelControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFFPSLabelControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFTouchableControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFButtonControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFCheckBoxControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFSystemData.h">
+      <Filter>LFCore\LFCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFImageButtonControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFAnimatedSpriteControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFMovableSpriteControl.h">
+      <Filter>LFGUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
