@@ -4,7 +4,7 @@
     
 	<tab type="pages" visible="yes" title="" intro=""/>
     
-	<tab type="modules" visible="yes" title="Scripting" intro="LF2 engine Lua scripting"/>
+	<tab type="modules" visible="yes" title="Tutorials" intro="LF3 engine C++ game logic"/>
     
 	<tab type="namespaces" visible="yes" title="Engine Source">
       <tab type="namespaces" visible="yes" title="" intro=""/>

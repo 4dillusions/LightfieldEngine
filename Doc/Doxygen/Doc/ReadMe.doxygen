@@ -1,73 +1,55 @@
 /**
 @mainpage Home
 
-Lightfield 2 engine
+Lightfield 3 engine
 ===================
-<img src="../Res/LFEngineScripting.jpg" alt="Lightfield2 engine"><br>
+Lightfield is flexible and cross-platform 2D game engine written in C++. It enables a powerful low level C++ API for creating complete 2D applications such as logical games.
+<img src="../Res/LFEngineRunning.jpg" alt="Lightfield2 engine"><br>
 <img src="../Res/LF2EngineEditorEdit.jpg" alt="Lightfield2 engine">
 
-Lightfield is flexible and cross-platform 2D game engine written in C++. It enables a powerful high level Lua API for creating complete 2D applications such as logical games.
-	
 Using SDK
 =========
-Get and Run
------------
-1. Get the SDK: <a target="_blank" href="http://4dillusions.com/Download/LightfieldEngine2/SDK/Lightfield2SDK.zip"><b>Lightfield 2 SDK</b></a>
-2. Run Code\Solution\Win32\Release\Lightfield2.exe
+Get and Run (Win32)
+-------------------
+1. Get the precompiled SDK: <a target="_blank" href="http://4dillusions.com/Download/LightfieldEngine3/SDK/Lightfield3SDK.zip"><b>Lightfield 3 SDK</b></a>
+3. Create an app. You could use Lua script in previous LF2 engine. Now it was deprecated because C++11 and data files are fast and efficient too.<br>
+Create a windows application, and link the LFEngine library with VisualStudio:
+<ul>
+<li>add new Visual C++ Win32 ConsoleApplication empty project in LF3EngineWin32All solution</li>
+<li>click right mouse on references and add LFEngine library</li>
+</ul>
 
-Scripting
----------
-Lightfield 2 is Lua based engine. You can configurate and write game logic with Lua for this engine.
-
-1. Code\Solution\Win32\Debug\Config.lua - folder places for contents and scripts.
-2. Code\Solution\Win32\Debug\Home\Script\Settings.lua - game settings 
-3. Code\Solution\Win32\Debug\Home\Script\Main.lua - entry point of game logic
-
-Lua bytecode
-------------
-You can use Lua text or binary files, the engine recognises automatically and load .lua (lua text) or .lby (lua binary) script files.
-If you put .lua and .lby files altogether, engine loads .lua textfile.
-
-LuaC.exe (LuaCompiler) is a .lua -> .lby translator. It's a console application, you can use it easily, for example: luac -o Config.lby Config.lua
+That is all! You are ready to write game logic code in C++.
 
 Compile the SDK
 ===============
-Depencies
----------
+Depencies (precompiled for Win32)
+---------------------------------
+<ul>
+<li><b>Audiere 1.9.4</b> sound engine</li>
+<li><b>D3D9</b> DirectX9</li>
+<li><b>glew 2.0</b> Modern OpenGL helper</li>
+<li><b>GLFW 3.2.1</b> Window and input framework</li>
+<li><b>libcurl</b> newtwork library </li>
+<li><b>MSVC2015</b> Visual C++ runtime</li>
+</ul>
 
-1. audiere 1.9.4 sound engine for windows (precompiled)
-2. D3D9 direct3d render from DirectX SDK 2012 june (precompiled)
-3. glfw 3.0.2 render window and input support for windows (precompiled)
-4. lua 5.2.2 script engine
-5. Soil 1.16 OpenGL image library
-6. QT 5.3.2 community edition is a user interface framework for editor (you can download the <a target="_blank" href="http://qt-project.org/downloads"><b>QT SDK</b></a>)
+Depencies (from source for Win32 and Tizen)
+-------------------------------------------
+<ul>
+<li><b>SOIL2</b> texture loading library for OpenGL</li>
+</ul>
 
-Compile on Win32
-----------------
-open SDK VS2013 solution: Code\Solution\Win32\LightfieldEngine2SDK.sln
+Download Source code with depencies
+-----------------------------------
+Get the source code: <a target="_blank" href="https://github.com/4dillusions/Lightfield3/archive/master.zip"><b>Lightfield 3 source code</b></a>
 
-compile
-1. Soil
-2. Lua
-3. LFCore
-4. LFEngine
-5. Lightfield2App
-6. LuaCompiler
-7. LFEditor (QT 5.3.2 or later required)
-
-settings <br>
-set working directory on Lightfield2App and LuaCompiler: Properties\Debugging\Working Directory\..\Debug
-
-Compile on Tizen
-----------------
-Create projects in: Code\Solution\Tizen (look at settings: Doc\ProjectSettings.txt)
-
-compile:
-1. Soil
-2. Lua
-3. LFCore
-4. LFEngine
-5. Lightfield2
+Compile
+-------
+<ul>
+<li><b>Win32</b> Open Solution file: Solution\Win32\LF3EngineWin32All.sln</li>
+<li><b>Tizen</b> Create projects in: Solution\Tizen (look at settings: Doc\ProjectSettings.txt)</li>
+</ul>
 
 UML
 ===
@@ -75,11 +57,11 @@ Engine architecture
 -------------------
 <img src="../Res/UmlArchitecture.jpg" alt="engine architecture"> <br/><br/>
 
-Engine modules
---------------
-<img src="../Res/UmlEngine.jpg" alt="engine modules"> <br/><br/>
-
 Scenegraph
 ----------
 <img src="../Res/UmlScenegraph.jpg" alt="scenegraph"> <br/><br/>
+
+Network
+-------
+<img src="../Res/UmlNetwork.jpg" alt="network"> <br/><br/>
 **/

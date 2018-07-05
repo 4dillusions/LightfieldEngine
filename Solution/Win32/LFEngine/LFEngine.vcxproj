@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\LFEngine\LFAudio\LFAudioSystem.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFAudio\_Win32_\LFAudioSystemWin32.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFDateTime.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameComponent.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameComponentList.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameCompositeComponent.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFMemoryManager.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFString.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFSystemData.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTime.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTimer.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFVFSManager.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFWatch.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFFile.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFJson.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFLogger.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFTextRW.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFCircle.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFColor.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMath.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMatrix3.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMatrix4.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFRandom.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFRectangle.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector2D.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector3D.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector4D.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFData\LFGameStateData.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFData\LFLevelData.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFData\LFOptionsData.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGameEngine\LF3GameEngine.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGameEngine\LF3GameEngineFactory.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFAnimatedSpriteControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFButtonControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFCheckBoxControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFFontControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFFPSLabelControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFImageButtonControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFImageControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFLabelControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFSpriteControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFTimerControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFTouchableControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFGUI\LFMovableSpriteControl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFInput\LFInputSystem.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFInput\_Win32_\LFInputSystemWin32.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFNetwork\LFCurl.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFRenderSystemGLES20.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectBasicGLES20.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectGLES20.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectNormalGLES20.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFTextureGLES20.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFVertexTextureDataGLES20.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFRenderComponent.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFRenderWindow.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFShaderEffect.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFTexture.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\LFVertexTextureData.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFRenderSystemD3D9.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectBasicD3D9.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectD3D9.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectNormalD3D9.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFTextureD3D9.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFVertexTextureDataD3D9.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFRenderWindowWin32.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFScene\LFLayer.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFScene\LFSceneGraph.cpp" />
+    <ClCompile Include="..\..\..\Source\LFEngine\LFScene\LFScreen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThirdPartySoil\ThirdPartySoil.vcxproj">
+      <Project>{cf3a7dcd-3865-4ecb-a677-ac00d6b973e8}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\LFEngine\LFAudio\LFAudioSystem.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFAudio\_Win32_\LFAudioSystemWin32.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFDictionary.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFDictionaryNode.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFLinkedList.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFLinkedListNode.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFList.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCollections\LFListNode.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFDateTime.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFEvent.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameComponent.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameComponentList.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFGameCompositeComponent.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFMemoryManager.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFString.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFSystemData.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTime.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTimer.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFTuple.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFVFSManager.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFVFSPath.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCommon\LFWatch.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFCore.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFFile.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFJson.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFLogger.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFLogMessageType.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFLogOutputType.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFTextRW.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFIO\LFSerializer.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFCircle.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFColor.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMath.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMatrix3.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFMatrix4.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFRandom.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFRectangle.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector2D.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector3D.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFMath\LFVector4D.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFCore\LFPatterns\LFIoc.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFAppData.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFEditorData.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFGameStateData.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFIData.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFLevelData.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFData\LFOptionsData.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGameEngine\LF3GameEngine.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGameEngine\LF3GameEngineFactory.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGameEngine\LFIGame.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFAnimatedSpriteControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFButtonControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFCheckBoxControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFFontControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFFPSLabelControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFImageButtonControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFImageControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFLabelControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFSpriteControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFTimerControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFTouchableControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFGUI\LFMovableSpriteControl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFInput\LFHardwareButtonTypes.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFInput\LFInputSystem.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFInput\_Win32_\LFInputSystemWin32.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFNetwork\LFCurl.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFRenderSystemGLES20.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectBasicGLES20.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectGLES20.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFShaderEffectNormalGLES20.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFTextureGLES20.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFGLES20\LFVertexTextureDataGLES20.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFRenderComponent.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFRenderComponentList.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFIRenderSystem.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFRenderWindow.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFShaderEffect.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFTexture.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\LFVertexTextureData.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFRenderSystemD3D9.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectBasicD3D9.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectD3D9.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFShaderEffectNormalD3D9.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFTextureD3D9.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFD3D9\LFVertexTextureDataD3D9.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFRender\_Win32_\LFRenderWindowWin32.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFScene\LFLayer.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFScene\LFSceneGraph.h" />
+    <ClInclude Include="..\..\..\Source\LFEngine\LFScene\LFScreen.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8C42CEEB-F768-449F-9C39-BB6BA4723DB9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LFEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\Bin\$(Configuration)\$(Platform)\Lib</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\Bin\$(Configuration)\$(Platform)\Lib</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINCLASSIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;WINCLASSIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

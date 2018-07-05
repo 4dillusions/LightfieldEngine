@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFTest.cpp" />
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFTestObjectA.cpp" />
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFTestObjectB.cpp" />
+    <ClCompile Include="..\..\..\Source\LFUnitTest\_Win32_\Main.cpp">
+      <Filter>_Win32_</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFCollectionsTest.cpp">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFCommonTest.cpp">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFIOTest.cpp">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFMathTest.cpp">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFPatternsTest.cpp">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFUnitTest\_Win32_\LFUnitTest.cpp">
+      <Filter>_Win32_</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFEngine\LFData\LFDataTest.cpp">
+      <Filter>LFEngine\LFData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\LFUnitTest\LFEngine\LFNetwork\LFNetworkTest.cpp">
+      <Filter>LFEngine\LFNetwork</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFITestObject.h" />
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFTest.h" />
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFTestFoo.h" />
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFTestFoo2.h" />
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFTestLayer.h" />
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFTestObjectA.h" />
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFTestObjectB.h" />
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFTestSprite.h" />
+    <ClInclude Include="..\..\..\Source\LFUnitTest\Main.h" />
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFCollectionsTest.h">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFCommonTest.h">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFIOTest.h">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFMathTest.h">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFEngine\LFCore\LFPatternsTest.h">
+      <Filter>LFEngine\LFCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFEngine\LFData\LFDataTest.h">
+      <Filter>LFEngine\LFData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\LFUnitTest\LFEngine\LFNetwork\LFNetworkTest.h">
+      <Filter>LFEngine\LFNetwork</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="_Win32_">
+      <UniqueIdentifier>{908f120b-50cf-4652-a4af-cfc2b4be666e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFEngine">
+      <UniqueIdentifier>{d64bcad5-6c3f-45e0-a79e-89e7b9dc9648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFEngine\LFCore">
+      <UniqueIdentifier>{5e970e82-ea21-44f1-ac84-8d52eaadb9ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFEngine\LFData">
+      <UniqueIdentifier>{0f2bddfb-3237-4dec-9cfa-2f9893046a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LFEngine\LFNetwork">
+      <UniqueIdentifier>{4410e0dc-8dde-4365-b99f-2a7c8c73df6d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

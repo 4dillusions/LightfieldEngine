@@ -1,143 +1,58 @@
-Win32 - VS2013
-==============
-Compiling
-*********
-SDK
----
-<depencies>
-1. Soil (-)
-2. Lua (-)
+All platforms - Depencies
+*************************
+LFEngine:            ThirdPartySoil
+LFUnitTest:          LFEngine, glfw(win32), audiere(win32), curl
+Game:                LFEngine, ThirdPartySoil, glfw(win32), audiere(win32)
 
-3. LFCore (-)
-4. LFEngine (LFCore, Lua, Soil, glfw3dll, glfw3, opengl32, d3d9, Audiere)
-5. Lightfield2App (LFCore, LFEngine) /Win only/
-6. LuaCompiler (Lua) /Win only/
-7. LFEditor (LFEngine) /Win only/ (QT 5.3.2 or later required)
+VS2015: Solution properties\Project depencies
+Tizen: Project references
 
-Test
-----
-8. Lightfield2 (LFCore, LFEngine)
-9. UnitTest (LFCore, LFEngine)
+Win32 - Visual Studio 2015
+==========================
+Create VS solution: Win32/LF3EngineWin32.sln
+*********************************************
+default preprocessors: WIN32, _DEBUG, _LIB
+add library: project/references/add reference
 
-Settings
-********
-Solution\Project Build Order\<compile depencies>
-No SDL checks
-compile Native only
+1. ThirdPartySoil (Win32 project: static Library .lib) preprocessors: _CRT_SECURE_NO_WARNINGS 
+	General/Output directory: $(SolutionDir)\Bin\$(Configuration)\$(Platform)\Lib\ThirdParty\SOIL2
+	
+2. LFEngine (Win32 project: static Library .lib), preprocessors: WINCLASSIC, _CRT_SECURE_NO_WARNINGS 
+	General/Output directory: $(SolutionDir)\Bin\$(Configuration)\$(Platform)\Lib
+	
+3. LFUnitTest (Win32 ConsoleApp), references: LFEngine, preprocessors: WINCLASSIC, DEBUG
+	General/Output directory: $(SolutionDir)\Bin\$(Configuration)\$(Platform)\
+	Debugging/Working Directory: ..\Bin\[Debug-Release]\Win32\
+	
+4. Solar10 (Win32 ConsoleApp), references: LFEngine, ThirdPartySoil, preprocessors: WINCLASSIC, DEBUG
+	General/Output directory: $(SolutionDir)\Bin\$(Configuration)\$(Platform)\
+	Debugging/Working Directory: ..\Bin\[Debug-Release]\Win32\
+	
+5. Bubbles (Win32 ConsoleApp), references: LFEngine, ThirdPartySoil, preprocessors: WINCLASSIC, DEBUG
+	General/Output directory: $(SolutionDir)\Bin\$(Configuration)\$(Platform)\
+	Debugging/Working Directory: ..\Bin\[Debug-Release]\Win32\
+	
+6. LFLevelGenerator (Win32 ConsoleApp), references: LFEngine, preprocessors: WINCLASSIC, DEBUG
+	General/Output directory: $(SolutionDir)\Bin\$(Configuration)\$(Platform)\
+	Debugging/Working Directory: ..\Bin\[Debug-Release]\Win32\
 
--All (Release/Debug)
-C++\General: warning level 4
-C++\All options\Additional options: /MP
-C++\All options\SDL checks: -empty-
-C++\Precompiled headers: Not using precompiled headers
-Linker\General\Output file: ..\Release|Debug\<Assembly name>.dll
-General\Platform Toolset: Visual Studio 2013 - Windows XP (v120_xp)
+Tizen - Tizen Studio 1.0.1, 2.4 SDK
+===================================
+Create Native projects Mobile v2.4
+**********************************
+package name: com.dillusions.[module name]
+new folder link to src: ${PARENT-3-PROJECT_LOC}\Source\[module folder]
+all: preprocessors: C/C++ General\Paths & Symbols\GNU C, C++\Symbols
 
--Soil (static library .lib)
-C++\preprocessors: WIN32;DEBUG;_WINDOWS;%(PreprocessorDefinitions)
+1. ThirdPartySoil2 static library, preprocessors: TIZEN
 
--Lua (dll)
-C++\preprocessors: _WIN32;LUA_BUILD_AS_DLL;DEBUG;%(PreprocessorDefinitions)
-build events\post build event\command line: copy $(SolutionDir)\Release\Lua.dll $(SolutionDir)\Release\MagicSnake\Lua.dll
-build events\post build event\command line: copy $(SolutionDir)\Debug\Lua.dll $(SolutionDir)\Debug\MagicSnake\Lua.dll
+2. LFEngine static library, preprocessors: TIZEN, DEBUG, C/C++/settings/Dialect: C++1y
 
--LFCore (dll)
-C++\preprocessors: WIN32;CPP0X;DEBUG;_WINDOWS;_USRDLL;LFCORE_EXPORTS;%(PreprocessorDefinitions)
-build events\post build event\command line: copy $(SolutionDir)\Release\LFCore.dll $(SolutionDir)\Release\MagicSnake\LFCore.dll
-build events\post build event\command line: copy $(SolutionDir)\Debug\LFCore.dll $(SolutionDir)\Debug\MagicSnake\LFCore.dll
-
--LFEngine (dll)
-C++\preprocessors: WIN32;CPP0X;DEBUG;_WINDOWS;_USRDLL;LFENGINE_EXPORTS;%(PreprocessorDefinitions)
-build events\post build event\command line: copy $(SolutionDir)\Release\LFEngine.dll $(SolutionDir)\Release\MagicSnake\LFEngine.dll
-build events\post build event\command line: copy $(SolutionDir)\Debug\LFEngine.dll $(SolutionDir)\Debug\MagicSnake\LFEngine.dll
-
--Lightfield2App (Win32 Windows Application) 
-C++\preprocessors: WIN32;CPP0X;DEBUG;_CONSOLE;%(PreprocessorDefinitions)
-Debugging\Working directory: ..\Debug|Release
-
--Lightfield2 (Win32 Console Application) 
-C++\preprocessors: WIN32;CPP0X;DEBUG;_CONSOLE;%(PreprocessorDefinitions)
-Debugging\Working directory: ..\Debug|Release
-build events\post build event\command line: copy $(SolutionDir)\Release\Lightfield2.exe $(SolutionDir)\Release\MagicSnake\MagicSnake.exe
-build events\post build event\command line: copy $(SolutionDir)\Debug\Lightfield2.exe $(SolutionDir)\Debug\MagicSnake\MagicSnake.exe
-
--LuaCompiler (Win32 Console Application) 
-C++\preprocessors: WIN32;CPP0X;DEBUG;_CONSOLE;%(PreprocessorDefinitions)
-Debugging\Working directory: ..\Debug|Release
-
--LFEditor (QT Application)
-C++\preprocessors: UNICODE;WIN32;DEBUG;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)
-Debugging\Working directory: ..\Debug|Release
-General\Output directory: $(SolutionDir)$(Configuration)\
-
--UnitTest (Win32 Console Application) 
-C++\preprocessors: WIN32;CPP0X;DEBUG;_CONSOLE;%(PreprocessorDefinitions)
-Debugging\Working directory: ..\Debug|Release
-
-Tizen IDE 2.3.0 Rev 3
-=====================
-Compiling:
-**********
-SDK
----
-<depencies>
-1. Soil (-)
-2. Lua (-)
-
-3. LFCore (-)
-4. LFEngine (LFCore, Lua, Soil)
-5. Lightfield2 (LFCore, Lua, Soil, LFEngine)
-
-Test
-----
-6. UnitTest (LFCore, Lua, Soil, LFEngine)
-
-Settings
-********
-Window\Preferences\General\Workspace\Build order\use default build order:false, <order>
-
--Soil (static library, package name: com.4dillusions.soil)
-C++Build\Settings\C++Compiler\preprocessors: _DEBUG, TIZEN
-new folder link to src: ${PARENT-3-PROJECT_LOC}\Source\Depencies\Soil
-
--Lua (static library, package name: com.4dillusions.lua)
-C++Build\Settings\C++Compiler\preprocessors: _DEBUG, LUA_USE_POSIX, LUA_ANSI
-luac.c C++ Build/Settings/exlude (all configurations)
-new folder link to src: ${PARENT-3-PROJECT_LOC}\Source\Depencies\Lua
-
--LFCore (static library, package name: com.4dillusions.lfcore)
-C++Build\Settings\C++Compiler\preprocessors: DEBUG, _DEBUG, TIZEN
-new folder link to src: ${PARENT-3-PROJECT_LOC}\Source\Core
-
--LFEngine (static library, package name: com.4dillusions.lfengine)
-exclude from build: _Win32_ folders (all configurations)
-C++Build\Settings\C++Compiler\preprocessors: DEBUG, _DEBUG, TIZEN
-Project references: LFCore, Lua, Soil
-new folder link to src: ${PARENT-3-PROJECT_LOC}\Source\Engine
-
--Lightfield2 (Basic UI application, package name: com.4dillusions.lightfield2)
-exclude from build: _Win32_ folders (all configurations)
-C++Build\Settings\C++Compiler\preprocessors: DEBUG, _DEBUG, TIZEN
-C++Build\Settings\C++ linker\miscellaneous other objects (debug/release):
-	"${workspace_loc:/Soil/Debug/libsoil.a}"
-	"${workspace_loc:/Lua/Debug/liblua.a}"
-	"${workspace_loc:/LFCore/Debug/liblfcore.a}"
-	"${workspace_loc:/LFEngine/Debug/liblfengine.a}"   	
-C++Build\Settings\C++ linker\miscellaneous other options (debug/release):
-	-lrt
-Project references: LFCore, LFEngine, Lua, Soil
-new folder link to src: ${PARENT-3-PROJECT_LOC}\Source\Lightfield2
-
--UnitTest (Basic UI application, package name: com.4dillusions.unittest)
-exclude from build: _Win32_ folders (all configurations)
-C++Build\Settings\C++Compiler\preprocessors: DEBUG, _DEBUG, TIZEN
-C++Build\Settings\C++ Compiler|C Compiler|Assembler\includes: -
-C++Build\Settings\C++ linker\miscellaneous other objects (debug/release): 
-	"${workspace_loc:/Soil/Debug/libsoil.a}"
-	"${workspace_loc:/Lua/Debug/liblua.a}"
-	"${workspace_loc:/LFCore/Debug/liblfcore.a}"
-	"${workspace_loc:/LFEngine/Debug/liblfengine.a}"   	
-Project references: LFCore, LFEngine, Lua, Soil
-new folder link to src: ${PARENT-3-PROJECT_LOC}\Source\UnitTest
-
-Don't forget create certificates for emulator and device.
+3. LFUnitTest basic UI EFL, preprocessors: TIZEN, DEBUG, C/C++/settings/Dialect: C++1y, 
+	C/C++ General\Paths & Symbols\References: LFEngine, ThirdPartySoil, C++Build\Settings\C++ linker\miscellaneous other objects (debug/release) add .a
+	
+4. Solar10 basic UI EFL, preprocessors: TIZEN, DEBUG, C/C++/settings/Dialect: C++1y, 
+	C/C++ General\Paths & Symbols\References: LFEngine, ThirdPartySoil, C++Build\Settings\C++ linker\miscellaneous other objects (debug/release) add .a
+	
+5. Bubbles basic UI EFL, preprocessors: TIZEN, DEBUG, C/C++/settings/Dialect: C++1y, 
+	C/C++ General\Paths & Symbols\References: LFEngine, ThirdPartySoil, C++Build\Settings\C++ linker\miscellaneous other objects (debug/release) add .a
