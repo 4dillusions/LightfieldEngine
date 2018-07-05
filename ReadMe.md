@@ -11,7 +11,7 @@ Using SDK
 =========
 Get and Run
 -----------
-1. Get the source code: <a target="_blank" href="https://github.com/4dillusions/Lightfield2/archive/master.zip"><b>Lightfield 2 source code</b></a>
+1. Get the source code
 2. Get depencies and copy on Lightfield2-master folder <a target="_blank" href="http://4dillusions.com/Download/LightfieldEngine2/Depencies/Lightfield2Depencies.zip"><b>precompiled depency pack</b></a>
 3. Run Code\Solution\Win32\Release\Lightfield2.exe
 
